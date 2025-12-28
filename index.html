@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALTIZEN REDEEM CODE</title>
 
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:radial-gradient(circle at top,#1a1a1a,#000);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+/* WRAPPER */
+.wrapper{
+  width:90%;
+  max-width:360px;
+}
+
+/* INFO ATAS (BISA DISALIN SEBELUM REDEEM) */
+.top-info{
+  background:rgba(0,0,0,0.85);
+  border:2px dashed #00ff99;
+  border-radius:14px;
+  padding:12px;
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.top-info span{
+  color:#00ff99;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.copy-btn{
+  margin-top:6px;
+  padding:6px 12px;
+  border:none;
+  border-radius:6px;
+  background:#00ff99;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* CARD */
+.card{
+  background:rgba(0,0,0,0.8);
+  border:2px solid #f5c400;
+  border-radius:18px;
+  padding:25px 20px;
+  text-align:center;
+}
+
+.card h1{ color:#f5c400; }
+.card p{ font-size:13px;color:#ccc;margin-bottom:20px; }
+
+.card input{
+  width:100%;
+  padding:14px;
+  text-align:center;
+  border-radius:12px;
+  border:1px solid #f5c400;
+  background:#000;
+  color:#f5c400;
+  margin-bottom:15px;
+}
+
+.card button{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  font-weight:bold;
+  background:linear-gradient(90deg,#f5c400,#ffdd55);
+  cursor:pointer;
+}
+
+/* POPUP */
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.popup-box{
+  background:linear-gradient(180deg,#14532d,#0f3d22);
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  width:90%;
+  max-width:340px;
+}
+
+.data{
+  background:rgba(0,0,0,0.4);
+  padding:10px;
+  border-radius:10px;
+  margin-bottom:10px;
+  color:#00ff99;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- KODE BISA DISALIN SEBELUM REDEEM -->
+  <div class="top-info">
+    <div>REDEEM CODE INI:</div>
+    <span id="redeemText">AKunffgrts1sli!</span><br>
+    <button class="copy-btn" onclick="copyCode()">SALIN</button>
+  </div>
+
+  <div class="card">
+    <h1>ALTIZEN</h1>
+    <p>FREE FIRE REDEEM CODE</p>
+    <input id="code" type="text" placeholder="MASUKKAN REDEEM CODE">
+    <button onclick="redeem()">REDEEM</button>
+  </div>
+
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h2 style="color:#00ff99;">SUCCESS REDEEM</h2>
+    <div class="data"><b>GMAIL</b><br>alizxc849@gmail.com</div>
+    <div class="data"><b>PASSWORD</b><br>aa12345aa</div>
+    <button class="copy-btn" onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<script>
+const VALID_CODE = "AKunffgrts1sli!";
+
+function redeem(){
+  const code = document.getElementById("code").value.trim();
+  if(code === VALID_CODE){
+    document.getElementById("popup").style.display = "flex";
+  }else{
+    alert("REDEEM CODE TIDAK VALID");
+  }
+}
+
+function closePopup(){
+  document.getElementById("popup").style.display = "none";
+}
+
+function copyCode(){
+  navigator.clipboard.writeText(
+    document.getElementById("redeemText").innerText
+  );
+  alert("REDEEM CODE DISALIN");
+}
+</script>
+
+</body>
+  </html>
